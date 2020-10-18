@@ -10,7 +10,7 @@ pipeline {
     stage('Test Run') {
         steps {
           sh 'docker run -d -it 'cyberfrat:$BUILD_NUMBER'
+        }
       }
     }
-  }
-} 
+  } 
