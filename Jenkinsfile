@@ -12,5 +12,5 @@ pipeline {
           sh 'docker run -d -it 'cyberfrat:$BUILD_NUMBER'
         }
       }
-    }
-  } 
+   }
+ } 
