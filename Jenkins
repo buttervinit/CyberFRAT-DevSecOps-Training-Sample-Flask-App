@@ -1,19 +1,21 @@
 pipeline {
-  enviornment {
+  environment {
     registry = "buttervinit/flaskrepository"
     registryCredential ="Flask docker Image"
     dockerImage = ""
    }
+   
    agent any
   
   stages {
+  
     stage('Build Docker Image') {
       steps {
           script {
             dcokerImage = docker.build registry + ":$BUILD_NUMBER"
           }
         }
-       }
+      }
     }
     
     stage('Push to Docker Hub') {
@@ -22,15 +24,14 @@ pipeline {
           docker.withRegistry('', registryCredential ) {
             docker.Image.push()
          }
-       }
       }
      }
+    }
         
-    
     stage('Test run') {
       steps {
         sh 'docker run -d $registry:$BUILD_NUMBER'
         }
       }
   }  
-
+}
