@@ -1,11 +1,11 @@
 pipeline {
   environment {
     registry = "buttervinit/flaskrepository"
-    registryCredential = "Flask docker Image"
+    registryCredential = "DockerHub"
     dockerImage = ''
    }
    
-  agent any
+    agent any
   
   stages {
   
