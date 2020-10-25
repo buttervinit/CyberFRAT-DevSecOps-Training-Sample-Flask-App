@@ -6,6 +6,12 @@ pipeline {
       steps {
         sh 'docker build -t cyberfrat:$BUILD_NUMBER .'
         }
-    } 
+    }
+    
+    stage('Test run') {
+      steps {
+        sh 'docker run -d 'cyberfrat:$BUILD_NUMBER'
+        }
+      }
   }  
 }
