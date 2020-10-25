@@ -33,5 +33,5 @@ pipeline {
         sh 'docker run -d $registry:$BUILD_NUMBER'
         }
       }
-  }  
+  }
 }
