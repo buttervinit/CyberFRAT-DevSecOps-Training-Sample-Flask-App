@@ -1,14 +1,11 @@
 pipeline {
   environment {
-    registry = "buttervinit/flaskrepository"
+    registry = "buttervinit/ flaskrepository"
     registryCredential = "DockerHub"
     dockerImage = ''
    }
-   
-    agent any
-  
-  stages {
-  
+   agent any
+   stages {
     stage('Build Docker Image') {
       steps {
           script {
@@ -23,7 +20,7 @@ pipeline {
           docker.withRegistry('', registryCredential ) {
             dockerImage.push()
          }
-      }
+       }
      }
     }
         
