@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "buttervinit/ flaskrepository"
+    registry = "buttervinit/flaskrepository"
     registryCredential = "DockerHub"
     dockerImage = ''
    }
